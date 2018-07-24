@@ -8,11 +8,20 @@
     <link rel="stylesheet" href="stylesheets/base.css"></style>
     <link rel="stylesheet" href="stylesheets/layout.css"></style>
     <link rel="stylesheet" href="stylesheets/module.css"></style>
+
+    <script id="book-template" type="text/x-handlebars-template">
+      <section>{{title}}</section>
+      <section>{{author}}</section>  
+    </script>
   </head>
+
   <body>
-    <h1>Here a the header</h1>
+    <h1>Here the header</h1>
     <ul>
       a list
     </ul>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="/scripts/models/book.js"></script>
   </body>
 </html>
