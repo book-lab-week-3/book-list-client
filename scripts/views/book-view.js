@@ -5,11 +5,10 @@ var app = app || {};
 (function(module) {
   const bookView = {};
 
-  bookView.initIndexPage = context => {
-    app.hide('.container');
-    app.show('.book-view');
-
+  bookView.initIndexPage = () => {
+    app.showOnly('.book-view');
     app.Book.all.map(book => $('#book-list').append(book.toHtml()));
+    module.Book.all.map(book => $('#book-list').append(book.toHtml()));
   }
 
   module.bookView = bookView;

@@ -14,10 +14,19 @@ var app = app || {};
 
   Book.prototype.toHtml = function() {
     return app.render('book-list-template', this);
-  }
+  };
 
   Book.all = [];
-  Book.loadAll = rows => Book.all = rows.sort((a, b) => b.title)
+
+  Book.loadAll = rows => { 
+    rows.sort((a, b) => {
+      a.title - b.title;
+    });
+
+    Book.all = rows.map(bookObj => {
+      return new Book(bookObj)
+    });
+  };
 
   Book.fetchAll = callback =>
     $.get(`${app.ENVIRONMENT.apiUrl}/api/v1/books`)

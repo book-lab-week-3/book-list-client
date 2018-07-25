@@ -21,7 +21,7 @@ var app = app || {};
 
   module.render = (templateId, data) => {
     if(!module.bookTemplate) {
-      module.bookTemplate = Handlebars.compile($(`#${book-list-template}`).text());
+      module.bookTemplate = Handlebars.compile($(`#${templateId}`).text());
     }
     return module.bookTemplate(data);
   };
