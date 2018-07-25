@@ -1,5 +1,6 @@
 'use strict';
 
+var app = app || {};
 
 (function(module) {
   function errorCallback(err) {
