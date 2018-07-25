@@ -17,7 +17,15 @@ var app = app || {};
   }
 
   Book.all = [];
-  Book.loadAll = rows => Book.all = rows.sort((a, b) => b.title)
+
+  Book.loadAll = rows => {
+    rows.sort((a, b) => {
+      a.title - b.title;
+    });
+
+    Book.all = rows.map(rawBookObj => new Book(rawBookObj));
+
+  };
 
   Book.fetchAll = callback =>
     $.get(`${app.ENVIRONMENT.apiUrl}/api/v1/books`)
