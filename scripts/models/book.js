@@ -8,25 +8,19 @@ var app = app || {};
     module.errorView.initErrorPage(err);
   }
 
-  function Book(rawBookObj) {
-    Object.keys(rawBookObj).forEach(key => this[key] = rawBookObj[key]);
+  function Book(bookObj) {
+    Object.keys(bookObj).forEach(key => this[key] = bookObj[key]);
   }
 
   Book.prototype.toHtml = function() {
-    return app.render('book-list-template', this);
+    return app.render('#book-list-template', this);
   };
 
   Book.all = [];
 
-  Book.loadAll = rows => { 
-    rows.sort((a, b) => {
-      a.title - b.title;
-    });
-
-    Book.all = rows.map(bookObj => {
-      return new Book(bookObj)
-    });
-  };
+  Book.loadAll = rows =>
+    Book.all = rows.sort((a, b) =>
+      b.title - a.title).map(book => new Book(book));
 
   Book.fetchAll = callback =>
     $.get(`${app.ENVIRONMENT.apiUrl}/api/v1/books`)
