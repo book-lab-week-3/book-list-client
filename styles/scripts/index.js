@@ -20,9 +20,9 @@ var app = app || {};
   };
 
   module.render = (templateId, data) => {
-    if(!module.taskTemplate) {
-      module.taskTemplate = Handlebars.compile($(`#${book-template}`).text());
+    if(!module.bookTemplate) {
+      module.bookTemplate = Handlebars.compile($(`#${book-list-template}`).text());
     }
-    return module.taskTemplate(data);
+    return module.bookTemplate(data);
   };
 })(app);

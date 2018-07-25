@@ -13,21 +13,33 @@
       <section>{{title}}</section>
       <section>{{author}}</section>  
     </script>
+
+    <script id="error-template" type="text/x-handlebars-template">
+      <section>{{error}}</section>
+    </script>
+
   </head>
 
   <body>
     <main>
       <section id="book-list" class="book-view">
-
+        
 
       </section> 
       <section id="about" class="container">
 
 
       </section>
+      <section id="error-message" class="error-view">
+
+
+      </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="/styles/scripts/index.js"></script>
     <script src="/scripts/models/book.js"></script>
+    <script src="/styles/scripts/views/book-view.js"></script>
+    <script src="/styles/scripts/views/error-view.js"></script>
   </body>
 </html>
