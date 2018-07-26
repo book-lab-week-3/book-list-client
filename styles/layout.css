@@ -1,0 +1,11 @@
+header {
+  background-color: red;
+}
+
+
+@media only screen (min-width: 960px) {
+  header {
+    background-color: black;
+    max-width: 100%;
+  }
+}
