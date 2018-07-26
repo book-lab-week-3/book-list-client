@@ -1,18 +1,24 @@
 * {
-  outline: black dotted 3px;
+  outline: black dotted 1px;
 }
 
 body {
   background-color: grey;
-  max-width: 640px;
-  
+  max-width: 960px;  
 }
 
 header {
-  background-color: red;
+  background-color: black;
+  position: relative;
 }
 
-.icon-menu {
+.icon-menu:before {
   color: green;
-  float: right;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+section {
+  height: 250px;
 }
