@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/icons.css"></style>
 
     <script id="book-list-template" type="text/x-handlebars-template">
+
       <section class="book-picture"><img src="{{image_url}}">
         <section class="book-info">
           <h3 class="book-title">{{title}}</h3>
@@ -24,6 +25,7 @@
       <h4 class="book-author">{{author}} {{isbn}}</h4>
       <section class="book-picture"><img src="{{image_url}}"></section>
       <p>{{decscription}}</p>
+
     </script>
 
     <script id="error-template" type="text/x-handlebars-template">
@@ -33,14 +35,23 @@
 
   <body>
     <main>
+      <header>
+          <nav>
+            <img href="#home" class="logo" src="/styles/img/codefellows.png">
+            <h1>Books App</h1>
+            <svg class="icon icon-menu"><use xlink:href="#icon-menu"></use></svg>
+          </nav>
+      </header>
       <section id="book-list" class="book-view">
+
+
       </section> 
       <section id="about" class="container">
-sssssssssss
+
 
       </section>
       <section id="error-message" class="error-view">
-aaaaaaaaaaaaa
+        
       </section>
 
       <section id="book-detail" class="detail-view">
