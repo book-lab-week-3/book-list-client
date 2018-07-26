@@ -1,11 +1,18 @@
+* {
+  outline: black dotted 3px;
+}
+
+body {
+  background-color: grey;
+  max-width: 640px;
+  
+}
+
 header {
   background-color: red;
 }
 
-
-@media only screen (min-width: 960px) {
-  header {
-    background-color: black;
-    max-width: 100%;
-  }
+.icon-menu {
+  color: green;
+  float: right;
 }
