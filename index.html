@@ -10,15 +10,27 @@
     <link rel="stylesheet" href="styles/icons.css"></style>
 
     <script id="book-list-template" type="text/x-handlebars-template">
-      <section>{{title}}</section>
-      <section>{{author}}</section>
-        
+
+      <section class="book-picture"><img src="{{image_url}}">
+        <section class="book-info">
+          <h3 class="book-title">{{title}}</h3>
+          <h4 class="book-author">{{author}}</h4>
+          <p id="{{book_id}}">view details</p>
+        </section> 
+      </section>
+    </script>
+
+    <script id="book-detail-template" type="text/x-handlebars-template">
+      <h3 class="book-title">{{title}}</h3>
+      <h4 class="book-author">{{author}} {{isbn}}</h4>
+      <section class="book-picture"><img src="{{image_url}}"></section>
+      <p>{{decscription}}</p>
+
     </script>
 
     <script id="error-template" type="text/x-handlebars-template">
       <section>{{err}}</section>
     </script>
-
   </head>
 
   <body>
@@ -31,7 +43,7 @@
           </nav>
       </header>
       <section id="book-list" class="book-view">
-        
+
 
       </section> 
       <section id="about" class="container">
@@ -41,12 +53,19 @@
       <section id="error-message" class="error-view">
         
       </section>
+
+      <section id="book-detail" class="detail-view">
+bbbbbbbbbbb
+      </section>
+
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/models/book.js"></script>
     <script src="scripts/views/book-view.js"></script>
     <script src="scripts/views/error-view.js"></script>
+    <script src="scripts/views/detail-view.js"></script>
   </body>
 </html>

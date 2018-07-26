@@ -18,6 +18,11 @@ var app = app || {};
 
   Book.all = [];
 
+  // puts one book in Book.all when details for one book are selected :id
+  Book.loadOne = rows =>
+    Book.all = rows.map(book => new Book(book));
+
+  // puts all books in db into book.all
   Book.loadAll = rows =>
     Book.all = rows.sort((a, b) =>
       b.title - a.title).map(book => new Book(book));
@@ -25,6 +30,12 @@ var app = app || {};
   Book.fetchAll = callback =>
     $.get(`${app.ENVIRONMENT.apiUrl}/api/v1/books`)
       .then(Book.loadAll)
+      .then(callback)
+      .catch(errorCallback);
+
+  Book.fetchOne = callback =>
+    $.get(`${app.ENVIRONMENT.apiUrl}/api/v1/books/:id`)
+      .then(Book.loadOne)
       .then(callback)
       .catch(errorCallback);
 
