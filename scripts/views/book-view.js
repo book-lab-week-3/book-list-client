@@ -8,6 +8,7 @@ var app = app || {};
   bookView.initIndexPage = () => {
     app.showOnly('.book-view');
     $(`.error-view`).hide();
+    $(`.detail-view`).hide();
     module.Book.all.map(book => $('#book-list').append(book.toHtml()));
   }
 
