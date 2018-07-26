@@ -53,7 +53,27 @@
       </section>
 
       <section id="book-detail" class="detail-view">
+        
+      </section>
 
+      <section id="newBookForm" class="form-view">
+        <h1>New Article</h1>
+        <form action="#" id="new-form">
+          <label>
+            <input type="text" id="book-title" placeholder="Book title" required>
+          </label>
+          <label>
+            <input type="text" id="book-author" placeholder="Author Name" required>
+          </label>
+          <label>
+            <input type="text" id="book-cover-url" placeholder="Book Cover Image URL" required>
+          </label>
+          <label>
+            <input type="text" id="book-isbn" placeholder="ISBN" required>
+          </label>
+          <textarea id="book-description" rows="8" cols="40" required></textarea>
+          <button type="submit">Add book and return to the Home Page</button>
+        </form>
       </section>
 
     </main>
@@ -63,7 +83,6 @@
     <script src="scripts/index.js"></script>
     <script src="scripts/models/book.js"></script>
     <script src="scripts/views/book-view.js"></script>
-    <script src="scripts/views/error-view.js"></script>
-    <script src="scripts/views/detail-view.js"></script>
+    <script src="scripts/routes.js"></script>
   </body>
 </html>
