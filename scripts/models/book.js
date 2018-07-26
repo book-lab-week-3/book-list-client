@@ -39,5 +39,11 @@ var app = app || {};
       .then(callback)
       .catch(errorCallback);
 
+  Book.prototype.createBook = function(callback) {
+    $.post('/api/v1/books', {author: this.author, title: this.title, image_url: this.image_url, isbn: this.isbn, description: this.description})
+      .then(console.log)
+      .then(callback);
+  }
+
   module.Book = Book;
 })(app)
