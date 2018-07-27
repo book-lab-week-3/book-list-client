@@ -3,6 +3,7 @@
   <head>
     <meta charset=utf-8>
     <title>Book App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/reset.css"></style>
     <link rel="stylesheet" href="styles/icons.css"></style>
     <link rel="stylesheet" href="styles/base.css"></style>
@@ -33,14 +34,27 @@
   </head>
 
   <body>
+
+
+    <header>
+      <img href="#home" class="logo" src="/styles/img/codefellows.png">
+      <h1>Books App</h1>
+
+      <nav>
+        <div class="icon-links">
+          <span class="icon-menu"></span>
+          <ul>
+            <li class="tab" data-content="articles"><a href="#home" class="icon-home"> View All Books</a></li>
+            <li class="tab" data-content="articles"><a href="#" class="icon-home"> Add A New Book</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    </header>
+    
     <main>
-      <header>
-          <nav>
-            <img href="#home" class="logo" src="/styles/img/codefellows.png">
-            <h1>Books App</h1>
-            <span class="icon-menu"></span>
-          </nav>
-      </header>
+
+
       <section id="book-list" class="book-view">
 
       </section> 
@@ -53,7 +67,7 @@
       </section>
 
       <section id="book-detail" class="detail-view">
-        
+
       </section>
 
       <section id="newBookForm" class="form-view">
@@ -77,6 +91,15 @@
       </section>
 
     </main>
+
+    <footer>
+      <nav>
+        <ul>
+          
+        </ul>
+
+      </nav>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>

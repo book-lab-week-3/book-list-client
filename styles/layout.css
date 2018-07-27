@@ -1,41 +1,81 @@
 body {
   background-color: grey;
-  max-width: 960px;  
+  /* max-width: 960px;   */
 }
 
 header {
-  background-color: black;
+  background-color: #232424;
   position: relative;
+  height: 150px;
 }
 
 h1 {
-  color: green;
+  font-weight: bold;
+  font-size: 30px;
+  color: red;
+  display: inline;
+  outline: 2px blue dotted;
+  position: absolute;
+  top: 35px;
+  text-align: center;
+}
+
+nav {
+  outline: 2px green solid;
+  /* float: right; */
+  display: inline;
+}
+a {
+  text-decoration: none;
+}
+
+.icon-links ul{
+  display: none;
+}
+
+.icon-links:hover ul {
+  display: block;
+  background-color: #232424;
+  text-align: center;
+  font-size: 50px;
 }
 
 .icon-menu:before {
-  color: green;
+  color: red;
   position: absolute;
   top: 5px;
   right: 10px;
+  font-size: 47px;
 }
 
 #book-list {
   text-align: center;
   margin-top: 20px;
 }
-/* 
-section.book-picture img {
+
+
+.book-picture img {
   outline: blue solid 2px;
   position: relative;
+  width: 300px;
+  height: 350px;
+  z-index: 1;
 }
 
-secton.button#1 {
-  outline: 2px dotted blue;
-}
-
-
-.book-info button {
+#book-list .book-info#1 {
+  outline: blue solid 2px;
+  background-color: black;
+  color: white;
+  height: 50px;
+  width: 20%;
   position: absolute;
-  right: 20px;
-  outline: 5px dotted blue;
-} */
+  left: 182px;
+  z-index: 2;
+  text-align: left;
+  padding: 20px;
+}
+
+footer {
+  background-color: black;
+  height: 200px;
+}
