@@ -12,8 +12,8 @@ var app = app || {};
     Object.keys(bookObj).forEach(key => this[key] = bookObj[key]);
   }
 
-  Book.prototype.toHtml = function() {
-    return app.render('#book-list-template', this);
+  Book.prototype.toHtml = function(templateId) {
+    return app.render(templateId, this);
   }
 
   Book.all = [];
@@ -35,8 +35,10 @@ var app = app || {};
 
   Book.fetchOne = (context, callback) =>
     $.get(`${app.ENVIRONMENT.apiUrl}/api/v1/books/${context.params.id}`)
-      .then(results => context.book = results[0])
-      .then(callback)
+      .then(results => { context.book = results[0];
+        console.log(context);
+        return context})
+      .then((context) => callback(context))
       .catch(errorCallback);
 
   Book.prototype.createBook = function(callback) {
