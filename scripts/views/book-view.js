@@ -11,14 +11,17 @@ var app = app || {};
     $(`.error-view`).hide();
     $(`.detail-view`).hide();
     $(`.form-view`).hide();
-    module.Book.all.map(book => $('#book-list').append(book.toHtml()));
+    module.Book.all.map(book => $('#book-list').append(book.toHtml('book-list-template')));
   }
 
   bookView.initDetailPage = (context) => {
-    $('book-detail').empty();
+    $('#book-detail').empty();
     app.showOnly('.detail-view');
     $(`.error-view`).hide();
-    $('#book-detail').append(app.render('book-detail-template', context.book))
+    $('#book-list').hide();
+    // grab the book using an api call
+    let singleBook = new app.Book(context.book);
+    $('#book-detail').append(singleBook.toHtml('book-detail-template'));
   }
 
   bookView.initFormPage = () => {
