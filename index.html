@@ -3,20 +3,20 @@
   <head>
     <meta charset=utf-8>
     <title>Book App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/reset.css"></style>
+    <link rel="stylesheet" href="styles/icons.css"></style>
     <link rel="stylesheet" href="styles/base.css"></style>
     <link rel="stylesheet" href="styles/layout.css"></style>
     <link rel="stylesheet" href="styles/modules.css"></style>
-    <link rel="stylesheet" href="styles/icons.css"></style>
 
     <script id="book-list-template" type="text/x-handlebars-template">
 
-      <section class="book-picture"><img src="{{image_url}}">
+      <section class="book-picture"><img src="{{image_url}}"></section>
         <section class="book-info">
+          <button id="{{book_id}}">View Details</button>
           <h3 class="book-title">{{title}}</h3>
           <h4 class="book-author">{{author}}</h4>
-          <p id="{{book_id}}">view details</p>
-        </section> 
       </section>
     </script>
 
@@ -24,7 +24,7 @@
       <h3 class="book-title">{{title}}</h3>
       <h4 class="book-author">{{author}} {{isbn}}</h4>
       <section class="book-picture"><img src="{{image_url}}"></section>
-      <p>{{decscription}}</p>
+      <p>{{description}}</p>
 
     </script>
 
@@ -34,16 +34,28 @@
   </head>
 
   <body>
-    <main>
-      <header>
-          <nav>
-            <img href="#home" class="logo" src="/styles/img/codefellows.png">
-            <h1>Books App</h1>
-            <svg class="icon icon-menu"><use xlink:href="#icon-menu"></use></svg>
-          </nav>
-      </header>
-      <section id="book-list" class="book-view">
 
+
+    <header>
+      <img href="#home" class="logo" src="/styles/img/codefellows.png">
+      <h1>Books App</h1>
+
+      <nav>
+        <div class="icon-links">
+          <span class="icon-menu"></span>
+          <ul>
+            <li class="tab" data-content="articles"><a href="#home" class="icon-home"> View All Books</a></li>
+            <li class="tab" data-content="articles"><a href="#" class="icon-home"> Add A New Book</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    </header>
+    
+    <main>
+
+
+      <section id="book-list" class="book-view">
 
       </section> 
       <section id="about" class="container">
@@ -55,7 +67,7 @@
       </section>
 
       <section id="book-detail" class="detail-view">
-          bbbbbbbbbbb
+
       </section>
 
       <section id="newBookForm" class="form-view">
@@ -79,6 +91,15 @@
       </section>
 
     </main>
+
+    <footer>
+      <nav>
+        <ul>
+          
+        </ul>
+
+      </nav>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
