@@ -1,8 +1,7 @@
 'use strict';
 
-page('/', app.bookView.initIndexPage);
-page('/books/:book_id', app.bookView.initDetailPage);
-page('/books/new', app.bookView.initFormPage);
-
+page('/', app.Book.fetchAll(app.bookView.initIndexPage()));
+page('/books/:id', context => app.Book.fetchOne(context, app.bookView.initDetailPage));
+page('/books/new', context => app.bookView.initFormPage(context));
 
 page();
