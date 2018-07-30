@@ -10,7 +10,7 @@ var app = app || {};
     app.showOnly('.book-view');
     $(`.error-view`).hide();
     $(`.detail-view`).hide();
-    $(`.form-view`).hide();
+    $(`#new-book-form`).hide();
     module.Book.all.map(book => $('#book-list').append(book.toHtml('book-list-template')));
   }
 
@@ -25,21 +25,23 @@ var app = app || {};
   }
 
   bookView.initFormPage = () => {
-    app.showOnly('.form-view');
     $(`.error-view`).hide();
     $(`.detail-view`).hide();
     $(`.book-view`).hide();
-    $('new-book-form').on('submit', (e) => { e.preventDefault();
+    $('#new-book-form').show();
+
+    $('#new-book-form').on('submit', (e) => { e.preventDefault();
       let book = {
-        author: event.target.author.value,
         title: event.target.title.value,
-        isbn: event.target.isbn.value,
+        author: event.target.author.value,
         image_url: event.target.image_url.value,
+        isbn: event.target.isbn.value,
         description: event.target.description.value,
       };
       module.Book.createBook(book);
-    })
+    });
   }
+  
 
   bookView.initErrorPage = err => {
     app.showOnly('.error-view')
