@@ -53,7 +53,8 @@
     </header>
     
     <main>
-
+      <a href="/books/new">CREATE NWE E BOLKO!</a>
+      <a href="/">HOME</a>
 
       <section id="book-list" class="book-view">
 
@@ -70,22 +71,22 @@
 
       </section>
 
-      <section id="new-book-form" class="form-view">
+      <section id="new-book-form">
         <h1>New Article</h1>
         <form action="#" id="new-form">
           <label>
-            <input type="text" id="book-title" placeholder="Book title" required>
+            <input type="text" name="title" placeholder="Book title" required>
           </label>
           <label>
-            <input type="text" id="book-author" placeholder="Author Name" required>
+            <input type="text" name="author" placeholder="Author Name" required>
           </label>
           <label>
-            <input type="text" id="book-cover-url" placeholder="Book Cover Image URL" required>
+            <input type="text" name="image_url" placeholder="Book Cover Image URL" required>
           </label>
           <label>
-            <input type="text" id="book-isbn" placeholder="ISBN" required>
+            <input type="text" name="isbn" placeholder="ISBN" required>
           </label>
-          <textarea id="book-description" rows="8" cols="40" required></textarea>
+          <textarea name="description" rows="8" cols="40" required></textarea>
           <button type="submit">Add book and return to the Home Page</button>
         </form>
       </section>

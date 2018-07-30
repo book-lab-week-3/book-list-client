@@ -41,10 +41,10 @@ var app = app || {};
       .then((context) => callback(context))
       .catch(errorCallback);
 
-  Book.prototype.createBook = function(callback) {
-    $.post('/api/v1/books', {author: this.author, title: this.title, image_url: this.image_url, isbn: this.isbn, description: this.description})
+  Book.createBook = function(book) {
+    $.post(`${app.ENVIRONMENT.apiUrl}/api/v1/books`, book)
       .then(console.log)
-      .then(callback);
+      .then(() => page('/'))
   }
 
   module.Book = Book;
